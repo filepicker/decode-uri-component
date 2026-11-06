@@ -1,5 +1,8 @@
 # decode-uri-component
 
+> **Filestack fork.** Branch `filestack-0.5.x` / tag `v0.5.1-fs1` is upstream 0.5.1 (fix for GHSA-qr28-fpjm-wq7f) converted
+> to CommonJS, so packages that `require()` it (e.g. `source-map-resolve`) can use the fixed version. No logic changes.
+
 ![CI](https://github.com/SamVerschueren/decode-uri-component/workflows/CI/badge.svg) [![Coverage Status](https://coveralls.io/repos/SamVerschueren/decode-uri-component/badge.svg?branch=master&service=github)](https://coveralls.io/github/SamVerschueren/decode-uri-component?branch=master)
 
 > A better [decodeURIComponent](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent)
@@ -22,7 +25,7 @@ $ npm install --save decode-uri-component
 ## Usage
 
 ```js
-import decodeUriComponent from 'decode-uri-component';
+const decodeUriComponent = require('decode-uri-component');
 
 decodeUriComponent('%25');
 //=> '%'

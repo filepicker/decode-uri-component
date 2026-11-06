@@ -1,3 +1,5 @@
+'use strict';
+
 // Matches one or more consecutive percent-encoded bytes (e.g. `%C3%A5`).
 const token = '%[a-f0-9]{2}';
 const multiMatcher = new RegExp(`(${token})+`, 'gi');
@@ -136,7 +138,7 @@ function customDecodeURIComponent(input) {
 	return input.replace(multiMatcher, run => decode(run));
 }
 
-export default function decodeUriComponent(encodedURI) {
+function decodeUriComponent(encodedURI) {
 	if (typeof encodedURI !== 'string') {
 		throw new TypeError(`Expected \`encodedURI\` to be of type \`string\`, got \`${typeof encodedURI}\``);
 	}
@@ -149,3 +151,5 @@ export default function decodeUriComponent(encodedURI) {
 		return customDecodeURIComponent(encodedURI);
 	}
 }
+
+module.exports = decodeUriComponent;

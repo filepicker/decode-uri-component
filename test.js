@@ -1,5 +1,5 @@
-import test from 'ava';
-import m from './index.js';
+const test = require('ava');
+const m = require('./index.js');
 
 const tests = {
 	test: 'test',
